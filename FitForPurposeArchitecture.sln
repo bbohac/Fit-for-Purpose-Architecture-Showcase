@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADRs", "ADRs", "{570277D9-4AC2-B57C-FD2E-B85BACE0EF22}"
 	ProjectSection(SolutionItems) = preProject
 		01-minimal-api\ADRs\ADR-000-template.md = 01-minimal-api\ADRs\ADR-000-template.md
+		ADR-001-minimal-api.md = ADR-001-minimal-api.md
 	EndProjectSection
 EndProject
 Global
@@ -62,5 +63,8 @@ Global
 		{021C5612-4D9F-E438-5F37-F315B25FCF58} = {6D75DD77-0819-6602-AF4E-5F9F1ABA5E06}
 		{82167FF0-F05C-4E57-883B-2BBDC5AA855F} = {021C5612-4D9F-E438-5F37-F315B25FCF58}
 		{570277D9-4AC2-B57C-FD2E-B85BACE0EF22} = {6D75DD77-0819-6602-AF4E-5F9F1ABA5E06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5C36E37-F7D9-43ED-9DE1-5FBFF5DE6FBB}
 	EndGlobalSection
 EndGlobal
