@@ -1,34 +1,42 @@
 using Microsoft.AspNetCore.Mvc;
+using MinimalApi.Application;
 using MinimalApi.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IUrlRepository, InMemoryUrlRepository>();
+builder.Services.AddScoped<IShorteningService, ShorteningService>();
 
 var app = builder.Build();
 
-var urls = new Dictionary<string, string>();
-
-app.MapPost("/shorten", ([FromBody] ShortenRequest request) =>
+app.MapPost("/shorten", (
+  [FromBody] ShortenRequest request,
+  IShorteningService shorteningService) =>
 {
   if (string.IsNullOrWhiteSpace(request.Url))
   {
     return Results.BadRequest("Url is required.");
   }
 
-  var code = Guid.NewGuid().ToString("N")[..8];
-  urls[code] = request.Url;
-
-  return Results.Ok(new ShortenResponse(code, request.Url));
+  try
+  {
+    var shortUrl = shorteningService.Shorten(request.Url);
+    return Results.Ok(new ShortenResponse(shortUrl.Code, shortUrl.OriginalUrl));
+  }
+  catch (ArgumentException ex)
+  {
+    return Results.BadRequest(ex.Message);
+  }
 });
 
-app.MapGet("/{code}", (string code) =>
+app.MapGet("/{code}", (string code, IShorteningService shorteningService) =>
 {
-  if (urls.TryGetValue(code, out var url))
+  var url = shorteningService.Resolve(code);
+  if (url is null)
   {
-    return Results.Redirect(url);
+    return Results.NotFound();
   }
 
-  return Results.NotFound();
+  return Results.Redirect(url);
 });
 
 app.Run();
