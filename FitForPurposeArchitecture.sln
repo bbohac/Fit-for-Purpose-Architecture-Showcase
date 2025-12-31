@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADRs", "ADRs", "{570277D9-4
 	ProjectSection(SolutionItems) = preProject
 		01-minimal-api\ADRs\ADR-000-template.md = 01-minimal-api\ADRs\ADR-000-template.md
 		ADR-001-minimal-api.md = ADR-001-minimal-api.md
+		ADR-002-in-memory-storage.md = ADR-002-in-memory-storage.md
 	EndProjectSection
 EndProject
 Global
