@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using MinimalApi.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<IUrlRepository, InMemoryUrlRepository>();
+
 var app = builder.Build();
 
 var urls = new Dictionary<string, string>();
