@@ -1,0 +1,26 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/01-minimal-api/">
+    <File Path="01-minimal-api/README.md" />
+  </Folder>
+  <Folder Name="/01-minimal-api/ADRs/">
+    <File Path="01-minimal-api/ADRs/ADR-000-template.md" />
+    <File Path="01-minimal-api/ADRs/ADR-003-no-layers-mvp.md" />
+    <File Path="ADR-001-minimal-api.md" />
+    <File Path="ADR-002-in-memory-storage.md" />
+  </Folder>
+  <Folder Name="/01-minimal-api/src/">
+    <Project Path="01-minimal-api/src/MinimalApi.csproj" />
+  </Folder>
+  <Folder Name="/01-minimal-api/tests/">
+    <Project Path="01-minimal-api/tests/MinimalApi.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/build-and-test.yml" />
+    <File Path="README.md" />
+  </Folder>
+</Solution>
