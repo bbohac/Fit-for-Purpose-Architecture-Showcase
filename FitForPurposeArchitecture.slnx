@@ -9,9 +9,9 @@
   </Folder>
   <Folder Name="/01-minimal-api/ADRs/">
     <File Path="01-minimal-api/ADRs/ADR-000-template.md" />
+    <File Path="01-minimal-api/ADRs/ADR-001-minimal-api.md" />
+    <File Path="01-minimal-api/ADRs/ADR-002-in-memory-storage.md" />
     <File Path="01-minimal-api/ADRs/ADR-003-no-layers-mvp.md" />
-    <File Path="ADR-001-minimal-api.md" />
-    <File Path="ADR-002-in-memory-storage.md" />
   </Folder>
   <Folder Name="/01-minimal-api/src/">
     <Project Path="01-minimal-api/src/MinimalApi.csproj" />
@@ -19,7 +19,14 @@
   <Folder Name="/01-minimal-api/tests/">
     <Project Path="01-minimal-api/tests/MinimalApi.Tests.csproj" />
   </Folder>
-  <Folder Name="/02-layered-architecture/" />
+  <Folder Name="/02-layered-architecture/">
+    <File Path="02-layered-architecture/README.md" />
+  </Folder>
+  <Folder Name="/02-layered-architecture/ADRs/">
+    <File Path="02-layered-architecture/ADRs/ADR-001-layered-architecture.md" />
+    <File Path="02-layered-architecture/ADRs/ADR-002-use-controllers.md" />
+    <File Path="02-layered-architecture/ADRs/ADR-003-in-memory-storage.md" />
+  </Folder>
   <Folder Name="/02-layered-architecture/src/">
     <Project Path="02-layered-architecture/src/Api/Api.csproj" />
     <Project Path="02-layered-architecture/src/Application/Application.csproj" />
